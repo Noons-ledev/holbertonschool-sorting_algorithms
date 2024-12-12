@@ -6,9 +6,10 @@
  */
 void selection_sort(int *array, size_t size)
 {
-	int min, temp;
-	unsigned long int i, j;
+	size_t i, j, min, temp;
 
+	if (array == NULL)
+		return;
 	for (i = 0; i < size - 1; i++)
 	{
 		min = i;
@@ -20,6 +21,7 @@ void selection_sort(int *array, size_t size)
 		temp = array[i];
 		array[i] = array[min];
 		array[min] = temp;
-		print_array(array, size);
+		if (i != min)
+			print_array(array, size);
 	}
 }
