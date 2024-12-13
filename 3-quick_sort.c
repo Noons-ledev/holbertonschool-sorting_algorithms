@@ -1,10 +1,11 @@
 #include "sort.h"
 /**
  * swap - swap 2 int
+ *@array: pointer to array
  * @a: 1st int
  * @b: 2nd int
  * @size: sizeof array
- */ 
+ */
 void swap(int *array, size_t size, size_t a, size_t b)
 {
 	int temp;
@@ -39,7 +40,7 @@ int partition(int *array, size_t low, size_t high, size_t size)
 		if (array[j] <= pivot)
 		{
 			i++;
-			swap(array, size, i , j);
+			swap(array, size, i, j);
 		}
 	}
 	swap(array, size, i + 1, high);
@@ -57,7 +58,7 @@ void recursive(int *array, size_t low, size_t high, size_t size)
 	if (low >= high)
 		return;
 	if (low < high)
-	{	
+	{
 		size_t p;
 
 		p = partition(array, low, high, size); /* find the index */
